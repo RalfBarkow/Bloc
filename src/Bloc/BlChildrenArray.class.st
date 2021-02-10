@@ -99,7 +99,7 @@ BlChildrenArray >> size [
 BlChildrenArray >> swapAt: aChildIndex with: anotherChildIndex [
 	aChildIndex = anotherChildIndex
 		ifTrue: [ ^ self ].
-		
+	"	
 	self
 		assert: [ aChildIndex between: 1 and: self size ]
 		description: [ 'Child index must be within bounds' ].
@@ -107,6 +107,6 @@ BlChildrenArray >> swapAt: aChildIndex with: anotherChildIndex [
 	self
 		assert: [ anotherChildIndex between: 1 and: self size ]
 		description: [ 'Child index must be within bounds' ].
-		
+	"	
 	array swap: aChildIndex with: anotherChildIndex
 ]

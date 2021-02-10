@@ -37,13 +37,12 @@ BlColorPaint >> = anotherObject [
 
 { #category : #accessing }
 BlColorPaint >> color [
-	"Return paint's underlying color.
-	color can not be nil"
+	"Return paint's underlying color."
 	<return: #Color>
 	
-	self
+	"self
 		assert: [ color isNotNil ]
-		description: [ 'Color can not be nil' ].
+		description: [ 'Color can not be nil' ]."
 	
 	^ color
 ]
@@ -51,9 +50,11 @@ BlColorPaint >> color [
 { #category : #accessing }
 BlColorPaint >> color: aColor [
 	"Initialize me with a given Color"
+	"Bogus: the following code cannot work we can never modify the attributes.
 	self
 		assert: [ color isNil ]
 		description: [ 'Color paint is immutable!' ].
+	"
 
 	color := aColor
 ]

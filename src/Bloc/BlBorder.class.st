@@ -79,9 +79,11 @@ BlBorder >> = anObject [
 
 { #category : #copy }
 BlBorder >> copyWithOpacity: aNumber [
-	self
+	"Opacity value, aNumber, must be within interval [0..1]."
+	
+	"self
 		assert: [ aNumber isNotNil ]
-		description: [ 'Opacity must not be nil' ].
+		description: [ 'Opacity must not be nil' ]."
 
 	^ self class basicNew
 		initialize;
@@ -95,9 +97,9 @@ BlBorder >> copyWithOpacity: aNumber [
 { #category : #copy }
 BlBorder >> copyWithPaint: aPaint [
 
-	self
+	"self
 		assert: [ aPaint isNotNil ]
-		description: [ 'Paint must not be nil' ].
+		description: [ 'Paint must not be nil' ]."
 
 	^ self class basicNew
 		initialize;
@@ -111,9 +113,9 @@ BlBorder >> copyWithPaint: aPaint [
 { #category : #copy }
 BlBorder >> copyWithStyle: aStrokeStyle [
 
-	self
+	"self
 		assert: [ aStrokeStyle isNotNil ]
-		description: [ 'Style must not be nil' ].
+		description: [ 'Style must not be nil' ]."
 
 	^ self class basicNew
 		initialize;
@@ -127,9 +129,9 @@ BlBorder >> copyWithStyle: aStrokeStyle [
 { #category : #copy }
 BlBorder >> copyWithWidth: aWidth [
 
-	self
+	"self
 		assert: [ aWidth isNotNil ]
-		description: [ 'Width must not be nil' ].
+		description: [ 'Width must not be nil' ]."
 
 	^ self class basicNew
 		initialize;
@@ -176,7 +178,8 @@ BlBorder >> opacity [
 
 { #category : #accessing }
 BlBorder >> opacity: aNumber [
-	self
+	"Opacity value, aNumber, must be within interval [0..1]."
+	"self
 		assert: [ aNumber isNotNil ]
 		description: [ 'Opacity must not be nil' ].
 	self
@@ -184,7 +187,7 @@ BlBorder >> opacity: aNumber [
 		description: [ 'Opacity value must be within interval [0..1]' ].
 
 	opacity isNotNil
-		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ].
+		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ]."
 
 	opacity := aNumber
 ]
@@ -198,12 +201,13 @@ BlBorder >> paint [
 
 { #category : #accessing }
 BlBorder >> paint: aBlPaint [
-	self
+
+	"self
 		assert: [ aBlPaint isNotNil ]
 		description: [ 'Paint must not be nil' ].
 
 	paint isNotNil
-		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ].
+		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ]."
 
 	paint := aBlPaint asBlPaint
 ]
@@ -230,12 +234,12 @@ BlBorder >> style [
 
 { #category : #accessing }
 BlBorder >> style: aBlStrokeStyle [
-	self
+	"self
 		assert: [ aBlStrokeStyle isNotNil ]
 		description: [ 'Style must not be nil' ].
 
 	style isNotNil
-		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ].
+		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ]."
 
 	style := aBlStrokeStyle
 ]
@@ -248,16 +252,16 @@ BlBorder >> width [
 ]
 
 { #category : #accessing }
-BlBorder >> width: aNumber [
-	self
-		assert: [ aNumber isNotNil ]
+BlBorder >> width: aPositiveNumber [
+	"self
+		assert: [ aPositiveNumber isNotNil ]
 		description: [ 'Width must not be nil' ].
 	self
-		assert: [ aNumber >= 0 ]
+		assert: [ aPositiveNumber >= 0 ]
 		description: [ 'Width must not be negative' ].
 
 	width isNotNil
-		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ].
+		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ]."
 	
-	width := aNumber
+	width := aPositiveNumber
 ]

@@ -76,9 +76,12 @@ BlCornerRadii >> bottomLeft: aNumber [
 	"Initialize bottom left corner radius with a given number.
 	It can be done only once"
 	
-	self
+	"self
 		assert: [ bottomLeft isNil ]
-		description: [ 'Can not change bottom left radius, I am immutable!' ].
+		description: [ 'Can not change bottom left radius, I am immutable!' ]."
+	
+	bottomLeft isNil 
+		ifFalse: [ self error: 'Can not change top right radius, it is immutable!' ].
 
 	bottomLeft := aNumber
 ]
@@ -93,9 +96,12 @@ BlCornerRadii >> bottomRight: aNumber [
 	"Initialize bottom right corner radius with a given number.
 	It can be done only once"
 
-	self
+	"self
 		assert: [ bottomRight isNil ]
-		description: [ 'Can not change bottom right radius, I am immutable!' ].
+		description: [ 'Can not change bottom right radius, I am immutable!' ]."
+	
+	bottomRight isNil 
+		ifFalse: [ self error: 'Can not change top right radius, it is immutable!']. 
 
 	bottomRight := aNumber
 ]
@@ -136,9 +142,11 @@ BlCornerRadii >> topLeft: aNumber [
 	"Initialize top left corner radius with a given number.
 	It can be done only once"
 
-	self
+	"self
 		assert: [ topLeft isNil ]
-		description: [ 'Can not change top left radius, I am immutable!' ].
+		description: [ 'Can not change top left radius, I am immutable!' ]."
+	topLeft isNil 
+		ifFalse: [ self error: 'Can not change top right radius, it is immutable!' ].
 
 	topLeft := aNumber
 ]
@@ -153,9 +161,12 @@ BlCornerRadii >> topRight: aNumber [
 	"Initialize top right corner radius with a given number.
 	It can be done only once"
 
-	self
+	"self
 		assert: [ topRight isNil ]
-		description: [ 'Can not change top right radius, I am immutable!' ].
+		description: [ 'Can not change top right radius, I am immutable!' ]."
+		
+	topRight isNil 
+		ifFalse: [ self error: 'Can not change top right radius, it is immutable!' ].
 
 	topRight := aNumber
 ]

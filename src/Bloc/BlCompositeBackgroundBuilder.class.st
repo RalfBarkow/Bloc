@@ -54,11 +54,13 @@ BlCompositeBackgroundBuilder >> initialize [
 
 { #category : #accessing }
 BlCompositeBackgroundBuilder >> opacity: aNumber [
-	"Change opacity of previously added background"
+	"Opacity value, aNumber, must be within interval [0..1]."
 	
+	"
 	self
 		assert: [ backgrounds isNotEmpty ]
 		description: [ 'There is no background to modify!' ].
+	"
 		
 	backgrounds last opacity: aNumber
 ]

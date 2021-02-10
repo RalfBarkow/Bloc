@@ -39,12 +39,14 @@ BlBackgroundBuilder >> opacity [
 
 { #category : #accessing }
 BlBackgroundBuilder >> opacity: aNumber [
-	self
+	"Opacity value must be within interval [0..1]"
+	
+	"self
 		assert: [ aNumber isNotNil ]
 		description: [ 'Opacity must not be nil' ].
 	self
 		assert: [ aNumber between: 0.0 and: 1.0 ]
-		description: [ 'Opacity value must be within interval [0..1]' ].
+		description: [ 'Opacity value must be within interval [0..1]' ]."
 
 	opacity := aNumber
 ]

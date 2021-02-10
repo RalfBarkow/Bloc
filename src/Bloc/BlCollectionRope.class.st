@@ -20,13 +20,14 @@ BlCollectionRope class >> collection: aCollection [
 BlCollectionRope class >> from: aLeftRope and: aRightRope [
 	| aNewSpecies |
 
-	self
+	"self
 		assert: [ aLeftRope species = self collectionRope ]
 		description: [ 'Can only merge two collection ropes' ].
 	
 	self
 		assert: [ aRightRope species = self collectionRope ]
 		description: [ 'Can only merge two collection ropes' ].
+	"
 	
 	aNewSpecies := aLeftRope collection species = aRightRope collection species
 		ifTrue: [ aLeftRope collection species ]

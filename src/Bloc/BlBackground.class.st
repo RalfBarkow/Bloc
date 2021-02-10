@@ -99,7 +99,7 @@ BlBackground >> opacity [
 
 { #category : #accessing }
 BlBackground >> opacity: aNumber [
-	self
+	"self
 		assert: [ aNumber isNotNil ]
 		description: [ 'Opacity must not be nil' ].
 	self
@@ -107,7 +107,7 @@ BlBackground >> opacity: aNumber [
 		description: [ 'Opacity value must be within interval [0..1]' ].
 
 	opacity isNotNil
-		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ].
+		ifTrue: [ (BlImmutableObjectChangeError object: self) signal ]."
 
 	self opacity = aNumber
 		ifTrue: [ ^ self ].

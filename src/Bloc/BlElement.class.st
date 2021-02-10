@@ -113,14 +113,14 @@ BlElement >> addChild: anElement as: aBlElementId [
 	| aChildId |
 	
 	aChildId := aBlElementId asBlocElementId.
-	
+	"
 	self
 		assert: [ (self children
 			detect: [ :aChild | aChild id = aChildId ]
 			ifFound: [ true ]
 			ifNone: [ false ]) not ]
 		description: [ 'Child with id #', aBlElementId asString, ' already exists' ].
-	
+	"
 	anElement id: aChildId.
 	self addChild: anElement
 ]
@@ -175,6 +175,7 @@ BlElement >> addChild: anElement at: anIndex as: aContainerName [
 	"Add a given element to my children at an index moving other children to the right and make it a named container,
 	so that we could add children in that container"
 	
+	"
 	self
 		assert: [ (self children
 			detect: [ :aChild |
@@ -184,7 +185,7 @@ BlElement >> addChild: anElement at: anIndex as: aContainerName [
 			ifFound: [ true ]
 			ifNone: [ false ]) not ]
 		description: [ 'Child named #', aContainerName asString, ' already exists' ].
-	
+	"
 	anElement containerName: aContainerName.
 	self addChild: anElement at: anIndex
 ]
@@ -881,13 +882,9 @@ BlElement >> constraints [
 { #category : #'private - accessing' }
 BlElement >> constraints: aLayoutConstraints [
 	"Set new layout constraints and request layout update.
-	aLayoutConstraints must not be nil"
+	aLayoutConstraints must not be nil."
 	<argument: #aLayoutConstraints satisfies: #notNil>
 		
-	self
-		assert: [ (aLayoutConstraints isKindOf: BlockClosure) not ]
-		description: [ 'Did you mean constraintsDo: ? Constraints should be an object' ].
-
 	constraints := aLayoutConstraints.
 	self requestLayout
 ]
@@ -1101,10 +1098,11 @@ BlElement >> detachFromParentWhile: aBlock [
 
 { #category : #'api - space' }
 BlElement >> detachSpace [
+	"
 	self
 		assert: [ self isAttachedToSceneGraph ]
 		description: [ 'Can not detach space when not attached' ].
-
+	"
 	spaceReference := BlDetachedSpaceReference uniqueInstance
 ]
 
@@ -2704,9 +2702,10 @@ BlElement >> opacity: aNumber [
 	aNumber must not be nil"
 	| aNewOpacity |
 
-	self
+	"self
 		assert: [ aNumber isNotNil ]
 		description: [ 'Opacity can not be nil' ].
+	"
 
 	aNewOpacity := (aNumber asFloat max: 0.0) min: 1.0.
 	
