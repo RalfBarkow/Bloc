@@ -22,21 +22,8 @@ BlOSWindowSDL2Renderer >> backendWindow: aWindowHandle [
 
 { #category : #'host space - accessing' }
 BlOSWindowSDL2Renderer >> canvasExtent [
-	| width height extent |
 
-	width := FFIExternalArray externalNewType: 'int' size: 1.
-	height := FFIExternalArray externalNewType: 'int' size: 1.
-1halt.
-	backendWindow sdl2Window
-		osWindowHostGetRendererSize: backendWindow sdl2Window osWindowHostGetRenderer
-		width: width getHandle
-		height: height getHandle.
-	extent := (width at: 1) @ (height at: 1).
-
-	width free.
-	height free.
-	
-	^ extent
+	^ backendWindow canvasExtent
 ]
 
 { #category : #'updating screen' }
