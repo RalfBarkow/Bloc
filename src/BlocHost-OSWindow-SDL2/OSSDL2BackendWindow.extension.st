@@ -23,5 +23,8 @@ OSSDL2BackendWindow >> minimized [
 
 { #category : #'*BlocHost-OSWindow-SDL2' }
 OSSDL2BackendWindow >> newBlocRenderer [
-	^ renderer := BlOSWindowSDL2Renderer for: self
+	renderer := BlOSWindowSDL2Renderer new 
+		backendWindow: self;
+"		createContext;"
+		yourself
 ]

@@ -3,7 +3,7 @@ I am an Bloc OSWindow renderer which uses SDL2.
 "
 Class {
 	#name : #BlOSWindowSDL2Renderer,
-	#superclass : #BlOSWindowRenderer,
+	#superclass : #OSSDL2GLRenderer,
 	#instVars : [
 		'renderer'
 	],
@@ -13,18 +13,11 @@ Class {
 	#category : #'BlocHost-OSWindow-SDL2-Renderer'
 }
 
-{ #category : #'instance creation' }
-BlOSWindowSDL2Renderer class >> for: aWindowHandle [
+{ #category : #initialization }
+BlOSWindowSDL2Renderer >> backendWindow: aWindowHandle [
 
-	^ self basicNew
-		initialize;
-		initializeWindowHandle: aWindowHandle;
-		yourself
-]
-
-{ #category : #'instance creation' }
-BlOSWindowSDL2Renderer class >> new [ 
-	self error: 'Use #for:'
+	super backendWindow: aWindowHandle.
+	renderer := backendWindow sdl2Window createAcceleratedRenderer
 ]
 
 { #category : #'host space - accessing' }
@@ -33,7 +26,7 @@ BlOSWindowSDL2Renderer >> canvasExtent [
 
 	width := FFIExternalArray externalNewType: 'int' size: 1.
 	height := FFIExternalArray externalNewType: 'int' size: 1.
-
+1halt.
 	backendWindow sdl2Window
 		osWindowHostGetRendererSize: backendWindow sdl2Window osWindowHostGetRenderer
 		width: width getHandle
@@ -46,11 +39,8 @@ BlOSWindowSDL2Renderer >> canvasExtent [
 	^ extent
 ]
 
-{ #category : #initialization }
-BlOSWindowSDL2Renderer >> initializeWindowHandle: aWindowHandle [
-
-	self backendWindow: aWindowHandle.
-	renderer := backendWindow sdl2Window createAcceleratedRenderer
+{ #category : #'updating screen' }
+BlOSWindowSDL2Renderer >> exposed [
 ]
 
 { #category : #'updating screen' }
@@ -67,5 +57,11 @@ BlOSWindowSDL2Renderer >> present [
 
 { #category : #accessing }
 BlOSWindowSDL2Renderer >> renderer [
+
 	^ renderer
+]
+
+{ #category : #'updating screen' }
+BlOSWindowSDL2Renderer >> resized [
+	
 ]
