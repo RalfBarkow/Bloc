@@ -2,8 +2,8 @@ Class {
 	#name : #BlOSWindowSDL2BufferSurfaceRenderer,
 	#superclass : #BlHostSurfaceRenderer,
 	#instVars : [
-		'window',
-		'texture'
+		'texture',
+		'sdlRenderer'
 	],
 	#pools : [
 		'SDL2Constants'
@@ -21,7 +21,7 @@ BlOSWindowSDL2BufferSurfaceRenderer >> initializeForSurface: aSurface [
 		createRGBSurfaceForCairoWidth: textureExtent x
 		height: textureExtent y.
 
-	texture := self renderer
+	texture := sdlRenderer
 		createTextureFormat: SDL_PIXELFORMAT_XRGB8888
 		access: SDL_TEXTUREACCESS_STREAMING
 		width: textureExtent x
@@ -42,21 +42,15 @@ BlOSWindowSDL2BufferSurfaceRenderer >> renderSurface: aSurface damaged: aCollect
 		pixels: aSurface buffer
 		pitch: aSurface stride.
 
-	self renderer
+	sdlRenderer
 		clear;
 		copy: texture;
 		present
 ]
 
 { #category : #accessing }
-BlOSWindowSDL2BufferSurfaceRenderer >> renderer [
+BlOSWindowSDL2BufferSurfaceRenderer >> sdlRenderer: aSDLRenderer [
+	"Initialize this instance with a SDL_Renderer that's required to render a surface."
 
-	^ window backendWindow renderer renderer
-]
-
-{ #category : #accessing }
-BlOSWindowSDL2BufferSurfaceRenderer >> window: anOSWindow [
-	"Initialize this instance with a backend window."
-
-	window := anOSWindow
+	sdlRenderer := aSDLRenderer
 ]

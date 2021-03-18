@@ -44,6 +44,5 @@ OSSDL2BackendWindow >> minimized [
 OSSDL2BackendWindow >> newBlocRenderer [
 	renderer := BlOSWindowSDL2Renderer new 
 		backendWindow: self;
-"		createContext;"
 		yourself
 ]

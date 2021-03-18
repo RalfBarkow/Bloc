@@ -5,7 +5,7 @@ Class {
 	#name : #BlOSWindowSDL2Renderer,
 	#superclass : #OSSDL2GLRenderer,
 	#instVars : [
-		'renderer'
+		'sdlRenderer'
 	],
 	#pools : [
 		'SDL2Constants'
@@ -13,14 +13,14 @@ Class {
 	#category : #'BlocHost-OSWindow-SDL2-Renderer'
 }
 
-{ #category : #initialization }
+{ #category : #accessing }
 BlOSWindowSDL2Renderer >> backendWindow: aWindowHandle [
 
 	super backendWindow: aWindowHandle.
-	renderer := backendWindow sdl2Window createAcceleratedRenderer
+	sdlRenderer := backendWindow sdl2Window createAcceleratedRenderer
 ]
 
-{ #category : #'host space - accessing' }
+{ #category : #accessing }
 BlOSWindowSDL2Renderer >> canvasExtent [
 
 	^ backendWindow canvasExtent
@@ -42,13 +42,13 @@ BlOSWindowSDL2Renderer >> present [
 	
 ]
 
-{ #category : #accessing }
-BlOSWindowSDL2Renderer >> renderer [
-
-	^ renderer
-]
-
 { #category : #'updating screen' }
 BlOSWindowSDL2Renderer >> resized [
 	
+]
+
+{ #category : #accessing }
+BlOSWindowSDL2Renderer >> sdlRenderer [
+
+	^ sdlRenderer
 ]
