@@ -1,5 +1,6 @@
 "
 The geometry is used to define the geometry to be drawn and the interaction area.
+
 "
 Class {
 	#name : #BlElementVectorGeometry,
@@ -8,8 +9,13 @@ Class {
 		'extent',
 		'pathCache'
 	],
-	#category : #'Bloc-Basic-Geometry'
+	#category : #'Bloc-Basic'
 }
+
+{ #category : #'as yet unclassified' }
+BlElementVectorGeometry >> buildPathOnSpartaCanvas: aCanvas [
+	^ self subclassResponsibility
+]
 
 { #category : #'geometry testing' }
 BlElementVectorGeometry >> containsPoint: aPoint in: aBlElement [
@@ -100,6 +106,13 @@ BlElementVectorGeometry >> matchExtent: aPoint [
 	"Resize geometry to exactly match provided extent as a Point"
 
 	self subclassResponsibility
+]
+
+{ #category : #'as yet unclassified' }
+BlElementVectorGeometry >> pathOnSpartaCanvas: aCanvas of: aBlElement [
+	<return: #TSpartaPath>
+	
+	^ pathCache pathOnSpartaCanvas: aCanvas
 ]
 
 { #category : #copying }

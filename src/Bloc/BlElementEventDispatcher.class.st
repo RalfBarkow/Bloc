@@ -1,5 +1,6 @@
 "
 I am a special event dispatcher designed for high frequency events such as ""position in space changed"" or ""added to scene graph"" events
+
 "
 Class {
 	#name : #BlElementEventDispatcher,
@@ -226,6 +227,19 @@ BlElementEventDispatcher >> enableTransformationChanged [
 { #category : #'api - element events' }
 BlElementEventDispatcher >> enableTransformationInSpaceChanged [
 	activatedElementEvents addTransformationInSpaceChanged
+]
+
+{ #category : #'gt-extension' }
+BlElementEventDispatcher >> gtEventsFor: aView [
+	<gtView>
+	^ aView columnedList
+		priority: 2;
+		title: 'Events';
+		items: [ (activatedElementEvents asDictionary associations
+				sorted: [ :a :b | a key < b key ])
+				, ((activatedGeneralEvents ifNil: [ #() ]) asArray collect: [ :each | each -> true ]) ];
+		column: 'Type' text: [ :each | each key ];
+		column: 'Enabled' text: [ :each | each value ]
 ]
 
 { #category : #initialization }

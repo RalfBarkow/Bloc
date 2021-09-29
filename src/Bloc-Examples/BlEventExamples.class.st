@@ -1,9 +1,10 @@
 "
 I contain examples various aspects of event dispatching and handling mechanism such as custom events, event simulation etc
+
 "
 Class {
 	#name : #BlEventExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-Event'
 }
 

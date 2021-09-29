@@ -1,6 +1,7 @@
 "
-I am a dummy object used by ${class:BlSpaceExamples}$.
-I evaluate create an icon on ${method:BlSpaceIconDummyStencil>>#asElement|label=#selector}$ call.
+I am a dummy object used by {{gtClass:BlSpaceExamples}}.
+I evaluate create an icon on {{gtMethod:BlSpaceIconDummyStencil>>#asElement|label=#selector}} call.
+
 
 "
 Class {
@@ -9,7 +10,7 @@ Class {
 	#instVars : [
 		'block'
 	],
-	#category : #'Bloc-Examples-SpaceMigrated'
+	#category : #'Bloc-Examples-Space'
 }
 
 { #category : #'api - converting' }

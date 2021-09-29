@@ -1,9 +1,10 @@
 "
 I contain examples of how to use key combination
+
 "
 Class {
 	#name : #BlKeyCombinationExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-KeyBinding'
 }
 

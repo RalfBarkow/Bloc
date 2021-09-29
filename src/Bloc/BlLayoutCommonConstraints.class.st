@@ -30,6 +30,7 @@ Internal Representation and Key Implementation Points.
 
 
     Implementation Points
+
 "
 Class {
 	#name : #BlLayoutCommonConstraints,
@@ -107,6 +108,32 @@ BlLayoutCommonConstraints >> doNotAccountTransformation [
 	"Let the layout know that the element's transformation should *not* be taken into account during layout"
 	
 	accountTransformation := false
+]
+
+{ #category : #accessing }
+BlLayoutCommonConstraints >> gtInfoFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Properties';
+		priority: 10;
+		items: [ 
+			{
+				'Horizontal resizer' -> self horizontal resizer.
+				'Vertical resizer' -> self vertical resizer.
+				'Requested position' -> self position.
+				'Margin' -> self margin.
+				'Padding' -> self padding.
+				'Minimum width' -> self minWidth.
+				'Maximum width' -> self maxWidth.
+				'Minimum height' -> self minHeight.
+				'Maximum height' -> self maxHeight.
+				'Ignored by layout' -> self ignoredByLayout.
+			}
+		];
+		column: 'Property' text: [ :each | each key ];
+		column: 'Value' text: [ :each | each value ];
+		send: [ :each | each value ]
+
 ]
 
 { #category : #'api - constraints' }

@@ -2,11 +2,12 @@
 I exemplify what happens if we compose horizontal grid, linear and flow layout and configure them to fit content vertically.
 
 This is a very important use case for complex UIs that involve vertical lists
+
 "
 Class {
 	#name : #BlFitContentVerticallyInHorizontalLayoutsExamples,
-	#superclass : #BlExamplesTest,
-	#category : #'Bloc-Layout-Examples-Fit'
+	#superclass : #Object,
+	#category : #'Bloc-Layout-Examples'
 }
 
 { #category : #'instance creation' }

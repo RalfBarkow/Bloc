@@ -1,0 +1,17 @@
+"
+I show a more complex example of how multiple children can be aligned within a parent element that uses {{gtClass:BlFrameLayout}}.
+
+The parent contains three children, yellow, green and red added in the same order. Yellow matches completely the parent. The green and red children have a fixed size and different alignments. We can see that red is overlayed on top of the green child, and both green and red are overlayed on top of the yellow child. This is the case as children are rendered in the other in which they were added to the parent.
+
+{{gtExample:BlFrameLayoutCompositionExamples>>#example|previewExpanded|previewHeight=450}}
+
+In case we add children in the reverse order, red, green and yellow, we just see the yellow child, as it takes the entire available space and it overlaps both the other children.
+
+{{gtExample:BlFrameLayoutCompositionExamples>>#exampleReverseOrder|previewExpanded|previewHeight=450}}
+
+"
+Class {
+	#name : #BlFrameLayoutCompositionExamples,
+	#superclass : #BlFrameLayoutExamples,
+	#category : #'Bloc-Layout-Examples-Frame'
+}

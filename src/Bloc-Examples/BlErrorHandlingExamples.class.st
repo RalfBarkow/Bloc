@@ -1,9 +1,10 @@
 "
 I exemplify how Bloc handles errors in different parts of the BlElement such as drawing, layout or event handling
+
 "
 Class {
 	#name : #BlErrorHandlingExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-Errors'
 }
 

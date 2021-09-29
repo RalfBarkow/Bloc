@@ -1,10 +1,11 @@
 "
 I contain examples of a flow layout
+
 "
 Class {
 	#name : #BlFlowLayoutCompositionExamples,
-	#superclass : #BlExamplesTest,
-	#category : #'Bloc-Layout-Examples-FlowMigrated'
+	#superclass : #Object,
+	#category : #'Bloc-Layout-Examples-Flow'
 }
 
 { #category : #examples }

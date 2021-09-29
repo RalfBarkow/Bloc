@@ -9,12 +9,18 @@ I can play a role of a circle if both width and height are equal. In this case c
 In order to explicitely create an ellipse use extent:
 
 	BlEllipseGeometry extent: 50@30 ""create an ellipse with width 50 and height 30""
+
 "
 Class {
 	#name : #BlEllipseGeometry,
 	#superclass : #BlElementVectorGeometry,
-	#category : #'Bloc-Basic-Geometry'
+	#category : #'Bloc-Basic'
 }
+
+{ #category : #'as yet unclassified' }
+BlEllipseGeometry >> buildPathOnSpartaCanvas: aCanvas [
+	^ aCanvas shape ellipse: self geometryBounds
+]
 
 { #category : #'geometry testing' }
 BlEllipseGeometry >> containsPoint: aPoint in: aBlElement [

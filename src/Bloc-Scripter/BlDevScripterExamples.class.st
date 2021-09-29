@@ -1,9 +1,10 @@
 "
-I exemplify ${class:BlDevScripter}$.
+I exemplify {{gtClass:BlDevScripter}}.
+
 "
 Class {
 	#name : #BlDevScripterExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#instVars : [
 		'elementExamples'
 	],

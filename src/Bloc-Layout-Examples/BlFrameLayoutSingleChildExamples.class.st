@@ -1,10 +1,11 @@
 "
-I contain examples of positioning a single element within a parent element that uses a ${class:BlFrameLayout}$.
+I contain examples of positioning a single element within a parent element that uses a {{gtClass:BlFrameLayout}}.
+
 "
 Class {
 	#name : #BlFrameLayoutSingleChildExamples,
-	#superclass : #BlFrameLayoutChildrenExamplesMigrated,
-	#category : #'Bloc-Layout-Examples-FrameMigrated'
+	#superclass : #BlFrameLayoutChildrenExamples,
+	#category : #'Bloc-Layout-Examples-Frame'
 }
 
 { #category : #'examples - setup' }

@@ -1,9 +1,10 @@
 "
-I exemplify ${class:BlSharedEventDistributor}$.
+I exemplify {{gtClass:BlSharedEventDistributor}}.
+
 "
 Class {
 	#name : #BlSharedEventDistributorExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-EventHandling'
 }
 

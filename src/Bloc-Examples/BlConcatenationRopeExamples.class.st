@@ -1,9 +1,10 @@
 "
 I contain examples of a concatenation rope
+
 "
 Class {
 	#name : #BlConcatenationRopeExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-Rope'
 }
 

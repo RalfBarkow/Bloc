@@ -1,7 +1,22 @@
+"
+Example:
+
+BlPolyline vertices: { 
+	10@50.
+	50@20.
+	150@40.
+	180@150.
+	80@140
+}
+
+"
 Class {
 	#name : #BlPolyline,
-	#superclass : #BlPolylineGeometry,
-	#category : #'Bloc-Basic-Geometry-Deprecated'
+	#superclass : #BlElementVectorGeometry,
+	#instVars : [
+		'vertices'
+	],
+	#category : #'Bloc-Basic'
 }
 
 { #category : #testing }

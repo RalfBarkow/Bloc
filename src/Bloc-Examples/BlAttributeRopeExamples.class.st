@@ -1,9 +1,10 @@
 "
 I contain examples of an attribute rope
+
 "
 Class {
 	#name : #BlAttributeRopeExamples,
-	#superclass : #BlExamplesTest,
+	#superclass : #Object,
 	#category : #'Bloc-Examples-Rope'
 }
 
